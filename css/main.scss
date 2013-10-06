@@ -1,0 +1,321 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+
+/* Quick reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,
+samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+// ----------------------------------------------------------------------
+//  Color palette
+//
+$palette-peter-river: #3498db;
+$palette-belize-hole: #2980b9;
+$palette-clouds: #ecf0f1;
+$palette-dark-gray: #222222;
+$transparent-blue: rgba(41, 128, 185, 0.6);
+// ----------------------------------------------------------------------
+//  Sizes
+//
+
+$side-pad: 30px;
+$header-height: 100px;
+$banner-height: 80px;
+$banner-pad: $header-height - $banner-height;
+$menu-height: 30px;
+$menu-pad: 12px;
+$page-width: 50em;
+$content-pad: 1em;
+$content-width: $page-width - 2*$content-pad;
+$content-min-height: 400px;
+$footer-pad: 30px;
+$footer-height: 70px;
+
+// ----------------------------------------------------------------------
+//  Misc. variables
+//
+$transition-time: 0.6s;
+
+/* ----------------------------------------------------------------------
+ * General styling
+ */
+html { 
+  width: 100%; 
+  height: 100%;
+  min-width: $page-width;
+}
+body {
+  width: 100%; 
+  height: 100%;
+  font-family: Oxygen, Lucida Grande, Arial, sans-serif;
+  background: $palette-clouds;
+}
+// Wrapper to help with sticky footer
+#page-wrapper {
+  min-height: 100%;
+}
+// Page padding bottom size of footer 
+#page {
+  width: $page-width;
+  margin: 0 auto; // center the page!
+  overflow: auto;
+  z-index: 3;
+}
+#page-background {
+  position: absolute;
+  top: $header-height + $menu-height + 2*$menu-pad;
+  left: 0;
+  right: 0;
+  height: $content-min-height;
+  background-color: $palette-clouds;
+  color: $palette-clouds;
+  font-size: 1.5em;
+  z-index: -1;
+}
+
+/* ----------------------------------------------------------------------
+ * Content control
+ */
+.content-wrapper {
+  overflow: hidden;
+  position: relative;
+  min-height: $content-min-height;
+  width: 100%;
+  clear: both; 
+}
+.content {
+  position: absolute;
+  min-width: $content-width;
+  padding: $content-pad $side-pad;
+  background-color: $palette-clouds;
+}
+
+/* ----------------------------------------------------------------------
+ * Parallax animation banner
+ */
+@mixin parallax-keyframes {
+  from {left: 0}
+  to   {left: -2000px}
+}
+@keyframes parallax {@include parallax-keyframes;}
+@-o-keyframes parallax {@include parallax-keyframes;}
+@-moz-keyframes parallax {@include parallax-keyframes;}
+@-webkit-keyframes parallax {@include parallax-keyframes;}
+@mixin parallax-positioning {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;  
+}
+#parallax-background { 
+  @include parallax-positioning;
+  z-index: -1;  
+  height: $header-height;
+  background: 
+      url('../images/bigeq.png') 5% 10%,
+      /*url('../images/midground.png') 20% 20%,*/
+      url('../images/background_binary.png') 90% 110%;
+  background-color: $palette-dark-gray;
+  $animation-value: parallax 40s linear infinite;
+  animation: $animation-value;
+  -o-animation: $animation-value;
+  -moz-animation: $animation-value;
+  -webkit-animation: $animation-value;
+}
+#parallax-overlay {
+  height: $header-height;
+  background-color: $transparent-blue;
+  @include parallax-positioning;
+  z-index: -1;
+}
+.banner {
+  height: $header-height - $banner-pad;
+  padding: $banner-pad 0 0 $side-pad;
+  color: $palette-clouds;
+  background-color: transparent;
+  z-index: 2;
+}
+.banner h1 { 
+  font-size: 3em; 
+  font-weight: 100; 
+}
+.banner h1 strong { 
+  font-size: 0.5em; 
+  font-weight: normal;
+}
+
+/* ----------------------------------------------------------------------
+ * Navigation menu
+ */
+#menu-background {
+  position: absolute;
+  height: $menu-height;
+  padding: $menu-pad 0 $menu-pad 0;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  background-color: $palette-belize-hole;
+  color: $palette-belize-hole;
+  font-size: 1.5em;
+  z-index: -1;
+}
+
+#nav-menu {
+  background-color: $palette-belize-hole;
+  color: $palette-clouds;
+  font-size: 1.5em;
+  height: $menu-height + 2*$menu-pad;
+  z-index: 0;
+}
+nav {
+  z-index: 0;
+  ul {
+    list-style: none
+  }
+  li {
+    float: left; 
+    display: block; 
+  }
+  a:link, a:visited {
+    height: $menu-height;
+    display: block;
+    padding: $menu-pad $side-pad;
+    text-decoration: none;
+    background-color: $palette-belize-hole;
+    color: $palette-clouds;
+  }
+  a.nav-current {
+    background-color: $palette-peter-river;  
+  }
+  // a:hover {
+    // background-color: $palette-peter-river;
+  // }
+}
+
+
+/* ----------------------------------------------------------------------
+ * Footer (sticky!)
+ */
+footer {
+  height: $footer-height;
+  margin-top: -$footer-height;
+  width: 100%;
+  clear: both;
+  background-color: $palette-dark-gray;
+  p {
+    height: $footer-height - $footer-pad;
+    padding: $footer-pad 0 0 $side-pad;
+    //background-color: transparent;
+    background-color: $transparent-blue;
+    color: $palette-clouds;
+    font-size: 0.6em;
+  }
+}
+
+/* ----------------------------------------------------------------------
+ * Miscellaneous
+ */
+
+/* ----------------------------------------------------------------------
+ * Page and nav transition animations
+ */
+.page-current {}
+.page-visible { visibility: visible; }
+.page-hidden { visibility: hidden; }
+
+$offscreen-position: 100%;
+$offscreen-left: translateX(-$offscreen-position);
+$offscreen-normal: translateX(0);
+$offscreen-right: translateX($offscreen-position);
+
+.page-setToLeft {  
+  -webkit-transform: $offscreen-left;
+  -moz-transform: $offscreen-left;
+  transform: $offscreen-left; 
+}
+.page-setToNormal { 
+  -webkit-transform: $offscreen-normal;
+  -moz-transform: $offscreen-normal;
+  transform: $offscreen-normal; 
+ }
+.page-setToRight { 
+  -webkit-transform: $offscreen-right;
+  -moz-transform: $offscreen-right;
+  transform: $offscreen-right; 
+}
+// ----------------------------------
+@mixin offscreen-animation($motion) {
+  $animation-params: $motion $transition-time ease both;
+  -webkit-animation: $animation-params;
+  -moz-animation: $animation-params;
+  animation: $animation-params;  
+} 
+// ----------------------------------
+@-webkit-keyframes moveToLeft { to { -webkit-transform: $offscreen-left; } }
+@-moz-keyframes moveToLeft { to { -moz-transform: $offscreen-left; } }
+@keyframes moveToLeft { to { transform: $offscreen-left; } }
+.page-moveToLeft {
+  @include offscreen-animation(moveToLeft); 
+}
+// ----------------------------------
+@-webkit-keyframes moveToNormal { to { -webkit-transform: $offscreen-normal; } }
+@-moz-keyframes moveToNormal { to { -moz-transform: $offscreen-normal; } }
+@keyframes moveToNormal { to { transform: $offscreen-normal; } }
+.page-moveToNormal {
+  @include offscreen-animation(moveToNormal);
+}
+// ----------------------------------
+@-webkit-keyframes moveToRight { to { -webkit-transform: $offscreen-right; } }
+@-moz-keyframes moveToRight { to { -moz-transform: $offscreen-right; } }
+@keyframes moveToRight { to { transform: $offscreen-right; } }
+.page-moveToRight {
+  @include offscreen-animation(moveToRight);
+}
+// ----------------------------------
+@-webkit-keyframes moveFromLeft { 
+  from { -webkit-transform: $offscreen-left; }
+  to { -webkit-transform: $offscreen-normal; } 
+}
+@-moz-keyframes moveFromLeft { 
+  from { -moz-transform: $offscreen-left; } 
+  to { -moz-transform: $offscreen-normal; }
+}
+@keyframes moveFromLeft { 
+  from { transform: $offscreen-left; } 
+  to { transform: $offscreen-normal; } 
+}
+.page-moveFromLeft {
+  @include offscreen-animation(moveFromLeft); 
+}
+// ----------------------------------
+@-webkit-keyframes moveFromRight { 
+  from { -webkit-transform: $offscreen-right; }
+  to { -webkit-transform: $offscreen-normal; } 
+}
+@-moz-keyframes moveFromRight { 
+  from { -moz-transform: $offscreen-right; } 
+  to { -moz-transform: $offscreen-normal; }
+}
+@keyframes moveFromRight { 
+  from { transform: $offscreen-right; }
+  to { transform: $offscreen-normal; } 
+}
+.page-moveFromRight {
+  @include offscreen-animation(moveFromRight); 
+}
+// ----------------------------------
+nav a {
+  $transition-value: all $transition-time ease;
+  -webkit-transition: $transition-value;
+  -moz-transition: $transition-value;
+  -o-transition: $transition-value;
+  transition: $transition-value;
+}
