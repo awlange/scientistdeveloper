@@ -18,7 +18,7 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 html {
   width: 100%;
   height: 100%;
-  min-width: 50em; }
+  min-width: 800px; }
 
 body {
   width: 100%;
@@ -30,9 +30,10 @@ body {
   min-height: 100%; }
 
 #page {
-  width: 50em;
+  width: 800px;
   margin: 0 auto;
   overflow: auto;
+  padding-bottom: 70px;
   z-index: 3; }
 
 #page-background {
@@ -40,27 +41,39 @@ body {
   top: 154px;
   left: 0;
   right: 0;
-  height: 400px;
   background-color: #ecf0f1;
   color: #ecf0f1;
-  font-size: 1.5em;
   z-index: -1; }
 
 /* ----------------------------------------------------------------------
  * Content control
  */
-.content-wrapper {
+#content-wrapper {
   overflow: hidden;
   position: relative;
-  min-height: 400px;
   width: 100%;
   clear: both; }
 
 .content {
   position: absolute;
-  min-width: 48em;
-  padding: 1em 30px;
+  min-width: 740px;
+  padding: 30px 30px;
   background-color: #ecf0f1; }
+
+.content-home-height {
+  height: 200px; }
+
+.content-resume-height {
+  height: 600px; }
+
+.content-science-height {
+  height: 100px; }
+
+.content-development-height {
+  height: 150px; }
+
+.content-contact-height {
+  height: 50px; }
 
 /* ----------------------------------------------------------------------
  * Parallax animation banner
@@ -199,9 +212,9 @@ footer {
   visibility: hidden; }
 
 .page-setToLeft {
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  transform: translateX(-100%); }
+  -webkit-transform: translateX(-101%);
+  -moz-transform: translateX(-101%);
+  transform: translateX(-101%); }
 
 .page-setToNormal {
   -webkit-transform: translateX(0);
@@ -209,26 +222,26 @@ footer {
   transform: translateX(0); }
 
 .page-setToRight {
-  -webkit-transform: translateX(100%);
-  -moz-transform: translateX(100%);
-  transform: translateX(100%); }
+  -webkit-transform: translateX(101%);
+  -moz-transform: translateX(101%);
+  transform: translateX(101%); }
 
 @-webkit-keyframes moveToLeft {
   to {
-    -webkit-transform: translateX(-100%); } }
+    -webkit-transform: translateX(-101%); } }
 
 @-moz-keyframes moveToLeft {
   to {
-    -moz-transform: translateX(-100%); } }
+    -moz-transform: translateX(-101%); } }
 
 @keyframes moveToLeft {
   to {
-    transform: translateX(-100%); } }
+    transform: translateX(-101%); } }
 
 .page-moveToLeft {
-  -webkit-animation: moveToLeft 0.6s ease both;
-  -moz-animation: moveToLeft 0.6s ease both;
-  animation: moveToLeft 0.6s ease both; }
+  -webkit-animation: moveToLeft 0.8s ease both;
+  -moz-animation: moveToLeft 0.8s ease both;
+  animation: moveToLeft 0.8s ease both; }
 
 @-webkit-keyframes moveToNormal {
   to {
@@ -243,81 +256,93 @@ footer {
     transform: translateX(0); } }
 
 .page-moveToNormal {
-  -webkit-animation: moveToNormal 0.6s ease both;
-  -moz-animation: moveToNormal 0.6s ease both;
-  animation: moveToNormal 0.6s ease both; }
+  -webkit-animation: moveToNormal 0.8s ease both;
+  -moz-animation: moveToNormal 0.8s ease both;
+  animation: moveToNormal 0.8s ease both; }
 
 @-webkit-keyframes moveToRight {
   to {
-    -webkit-transform: translateX(100%); } }
+    -webkit-transform: translateX(101%); } }
 
 @-moz-keyframes moveToRight {
   to {
-    -moz-transform: translateX(100%); } }
+    -moz-transform: translateX(101%); } }
 
 @keyframes moveToRight {
   to {
-    transform: translateX(100%); } }
+    transform: translateX(101%); } }
 
 .page-moveToRight {
-  -webkit-animation: moveToRight 0.6s ease both;
-  -moz-animation: moveToRight 0.6s ease both;
-  animation: moveToRight 0.6s ease both; }
+  -webkit-animation: moveToRight 0.8s ease both;
+  -moz-animation: moveToRight 0.8s ease both;
+  animation: moveToRight 0.8s ease both; }
 
 @-webkit-keyframes moveFromLeft {
   from {
-    -webkit-transform: translateX(-100%); }
+    -webkit-transform: translateX(-101%); }
 
   to {
     -webkit-transform: translateX(0); } }
 
 @-moz-keyframes moveFromLeft {
   from {
-    -moz-transform: translateX(-100%); }
+    -moz-transform: translateX(-101%); }
 
   to {
     -moz-transform: translateX(0); } }
 
 @keyframes moveFromLeft {
   from {
-    transform: translateX(-100%); }
+    transform: translateX(-101%); }
 
   to {
     transform: translateX(0); } }
 
 .page-moveFromLeft {
-  -webkit-animation: moveFromLeft 0.6s ease both;
-  -moz-animation: moveFromLeft 0.6s ease both;
-  animation: moveFromLeft 0.6s ease both; }
+  -webkit-animation: moveFromLeft 0.8s ease both;
+  -moz-animation: moveFromLeft 0.8s ease both;
+  animation: moveFromLeft 0.8s ease both; }
 
 @-webkit-keyframes moveFromRight {
   from {
-    -webkit-transform: translateX(100%); }
+    -webkit-transform: translateX(101%); }
 
   to {
     -webkit-transform: translateX(0); } }
 
 @-moz-keyframes moveFromRight {
   from {
-    -moz-transform: translateX(100%); }
+    -moz-transform: translateX(101%); }
 
   to {
     -moz-transform: translateX(0); } }
 
 @keyframes moveFromRight {
   from {
-    transform: translateX(100%); }
+    transform: translateX(101%); }
 
   to {
     transform: translateX(0); } }
 
 .page-moveFromRight {
-  -webkit-animation: moveFromRight 0.6s ease both;
-  -moz-animation: moveFromRight 0.6s ease both;
-  animation: moveFromRight 0.6s ease both; }
+  -webkit-animation: moveFromRight 0.8s ease both;
+  -moz-animation: moveFromRight 0.8s ease both;
+  animation: moveFromRight 0.8s ease both; }
 
 nav a {
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
-  -o-transition: all 0.6s ease;
-  transition: all 0.6s ease; }
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease; }
+
+#content-wrapper {
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease; }
+
+#page-background {
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease; }

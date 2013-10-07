@@ -12,11 +12,24 @@ var pages = {
   "#content-development": 3,
   "#content-contact": 4
 };
+var pageToPageHeight = {
+  "#content-home": "content-home-height",
+  "#content-resume": "content-resume-height",
+  "#content-science": "content-science-height",
+  "#content-development": "content-development-height",
+  "#content-contact": "content-contact-height"
+};
+var pageHeights = {
+  "content-home-height": "200px",
+  "content-resume-height": "600px",
+  "content-science-height": "100px",
+  "content-development-height": "150px",
+  "content-contact-height": "50px"
+}; 
 
 $( document ).ready( function(){
   for (var nav in navs) {
     navClick(nav, navs[nav]);
-    navHover(nav);
   }
 });
 
@@ -44,7 +57,6 @@ var isPageALeftOfPageB = function(pageA, pageB) {
 var isPageARightOfPageB = function(pageA, pageB) {
   return pages[pageA] > pages[pageB];
 };
-
 
 var clearSets = function(page) {
   var setClasses = ["page-setToLeft", "page-setToNormal", "page-setToRight"]; 
@@ -75,11 +87,25 @@ var navTransition = function(navFrom, navTo) {
   $(navTo).addClass("nav-current");	
 };
 
-var navClick = function(navClick, pageClick) {
-  $(navClick).click( function(){ 	 	
+var pageHeightTransition = function(pageFrom, pageTo) {
+  $("#content-wrapper").removeClass(pageToPageHeight[pageFrom]);
+  $("#page-background").removeClass(pageToPageHeight[pageFrom]);
+  $("#content-wrapper").addClass(pageToPageHeight[pageTo]);
+  $("#page-background").addClass(pageToPageHeight[pageTo]);	
+};
+
+var navClick = function(navClick, pageClick) {	
+  $(navClick).click( function(e){ 	 	
+    
+    // Prevent jumping to anchor (top of page) when clicked. e is for event.
+    e.preventDefault();
+  	
   	var pageCurrent = getCurrentPage(); 	
   	if (pageClick != pageCurrent) {	
   	  var navCurrent = getCurrentNav();	
+  	  
+  	  // change height of page wrapper to the clicked page height
+  	  pageHeightTransition(pageCurrent, pageClick);
   	  
   	  // clear previous moves and/or positioning
   	  clearMoves(pageClick);
@@ -98,16 +124,7 @@ var navClick = function(navClick, pageClick) {
         $(pageClick).addClass("page-moveFromLeft").addClass("page-current"); 
         navTransition(navCurrent, navClick);	
       }            
-      
-
     }
-
   });
 };
 
-var navHover = function(navHover) {
-  var navCurrent = getCurrentNav();
-  if (navHover != navCurrent) {
-  	var x = 1;
-  }	
-};
