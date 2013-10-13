@@ -20,7 +20,7 @@ var pageToPageHeight = {
   "#content-contact": "content-contact-height"
 };
 var pageHeights = {
-  "content-home-height": "200px",
+  "content-home-height": "520px",
   "content-resume-height": "600px",
   "content-science-height": "100px",
   "content-development-height": "150px",

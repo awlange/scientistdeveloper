@@ -31,12 +31,13 @@ $banner-height: 80px;
 $banner-pad: $header-height - $banner-height;
 $menu-height: 30px;
 $menu-pad: 12px;
+$menu-total-height: $menu-height + 2*$menu-pad;
 $footer-pad: 30px;
 $footer-height: 70px;
-$page-width: 800px;
+$page-width: 750px;
 $content-pad: $side-pad;
 $content-width: $page-width - 2*$content-pad;
-$content-height: 200px;
+$content-height: 600px;
 
 // ----------------------------------------------------------------------
 //  Misc. variables
@@ -78,6 +79,14 @@ body {
   color: $palette-clouds;
   z-index: -1;
 }
+h2 {
+  margin-top: 40px;
+  font-size: 1.75em;
+  color: $palette-belize-hole;
+}
+.right {
+  float: right;
+}
 
 /* ----------------------------------------------------------------------
  * Content control
@@ -94,11 +103,11 @@ body {
   padding: $content-pad $side-pad;
   background-color: $palette-clouds;
 }
-.content-home-height { height: 200px; }
-.content-resume-height { height: 600px; }
-.content-science-height { height: 100px; }
-.content-development-height { height: 150px; }
-.content-contact-height { height: 50px; }
+.content-home-height { height: 520px; }
+.content-resume-height { height: 2000px; }
+.content-science-height { height: 200px; }
+.content-development-height { height: 200px; }
+.content-contact-height { height: 160px; }
 
 
 /* ----------------------------------------------------------------------
@@ -127,11 +136,11 @@ body {
       /*url('../images/midground.png') 20% 20%,*/
       url('../images/background_binary.png') 90% 110%;
   background-color: $palette-dark-gray;
-  $animation-value: parallax 40s linear infinite;
-  animation: $animation-value;
-  -o-animation: $animation-value;
-  -moz-animation: $animation-value;
-  -webkit-animation: $animation-value;
+  // $animation-value: parallax 40s linear infinite;
+  // animation: $animation-value;
+  // -o-animation: $animation-value;
+  // -moz-animation: $animation-value;
+  // -webkit-animation: $animation-value;
 }
 #parallax-overlay {
   height: $header-height;
@@ -175,7 +184,7 @@ body {
   background-color: $palette-belize-hole;
   color: $palette-clouds;
   font-size: 1.5em;
-  height: $menu-height + 2*$menu-pad;
+  height: $menu-total-height;
   z-index: 0;
 }
 nav {
@@ -220,17 +229,13 @@ footer {
 }
 
 /* ----------------------------------------------------------------------
- * Miscellaneous
- */
-
-/* ----------------------------------------------------------------------
  * Page and nav transition animations
  */
 .page-current {}
 .page-visible { visibility: visible; }
 .page-hidden { visibility: hidden; }
 
-$offscreen-position: 101%;
+$offscreen-position: 100%;
 $offscreen-left: translateX(-$offscreen-position);
 $offscreen-normal: translateX(0);
 $offscreen-right: translateX($offscreen-position);
@@ -322,3 +327,71 @@ $offscreen-right: translateX($offscreen-position);
 nav a {@include css-transition}
 #content-wrapper {@include css-transition}
 #page-background {@include css-transition}
+
+/* ----------------------------------------------------------------------
+ * Individual page content stuff
+ */
+$bullet-radius: 48px;
+$bullet-diameter: 2*$bullet-radius;
+.bullet-wrapper {
+  height: $bullet-diameter;
+  width: $content-width;
+  p {
+    padding-top: 38px;
+    padding-left: 110px;
+  }
+}
+.bullet {
+  height: $bullet-diameter;
+  width: $bullet-diameter;
+  border-radius: $bullet-radius;
+  background-color: $palette-belize-hole;
+  float: left;       
+  display: block;
+  p {
+    margin: 0;
+    background-color: transparent;
+    color: $palette-clouds;
+    font-size: 1.25em;
+  }
+}
+$bullet-vertical-pad: 32px;
+#now {padding: $bullet-vertical-pad 30px;}
+#before {padding: $bullet-vertical-pad 20px;}
+#school {padding: $bullet-vertical-pad 20px;}
+#interests {padding: $bullet-vertical-pad 10px;}
+#resume {padding: $bullet-vertical-pad 15px;}
+#science {padding: $bullet-vertical-pad 16px;}
+#development {padding: $bullet-vertical-pad 30px;}
+#contact {padding: $bullet-vertical-pad 14px;}
+
+// ----------------------------------------------------------------------
+#content-resume {
+  div {
+    div p {
+      margin: 0;
+    }
+    p {
+      margin: 30px 0px;
+    }
+    ul {
+      margin: 10px 0px 10px 48px;
+      li {
+        font-size: 0.8em;
+      }
+      ul li {
+        list-style-type: none;
+      }
+    }
+  }
+}
+
+/* ----------------------------------------------------------------------
+ * Miscellaneous
+ */
+.line {
+  margin: 3px 0px;
+  height: 1px;
+  width: $content-width;
+  background-color: $palette-belize-hole;
+}

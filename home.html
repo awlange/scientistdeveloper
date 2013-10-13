@@ -1,15 +1,28 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Adrian W. Lange</title>
+    <meta name="description" content="Adrian W. Lange">
+    <meta name="keywords" content="scientist,developer">
+    <meta name="viewport" content="width=device-width">
+
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
+    <script src="js/jquery-1.10.2.js"></script>
     <script src="js/main.js"></script>
   </head>
 
   <body>  	
+  	<!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
   	
   	<div>
       <div id="parallax-background"> </div>
@@ -29,7 +42,7 @@
         <nav id="nav-menu">
           <ul>
       	    <li><a id="nav-home" class="nav-current" href="#">home</a></li>
-     	    <li><a id="nav-resume" href="#">resume</a></li>
+     	    <li><a id="nav-resume" href="#">resum&eacute;</a></li>
         	<li><a id="nav-science" href="#">science</a></li>
         	<li><a id="nav-development" href="#">development</a></li>
         	<li><a id="nav-contact" href="#">contact</a></li>   		
@@ -40,46 +53,171 @@
         
       <div id="content-wrapper" class="content-home-height">  
         <article id="content-home" class="content page-setToNormal page-current">
-          <p>This is where stuff will go.</p>	
-          <p>More stuff here.</p>
+            <div class="bullet-wrapper">
+              <div class="bullet"><p id="now">now</p></div>            
+              <p>software developer at
+                <a href="http://www.brighttag.com/" target="_blank">BrightTag</a>
+              </p>
+            </div>
+            <br/>
+            <div class="bullet-wrapper">
+              <div class="bullet"><p id="before">before</p></div>            
+              <p> postdoc at Argonne National Laboratory </p>
+            </div>
+            <br/>
+             <div class="bullet-wrapper">
+              <div class="bullet"><p id="school">school</p></div>            
+              <p> Ph.D. computational/physical chemistry at the Ohio State University </p>
+            </div>
+            <br/>
+             <div class="bullet-wrapper">
+              <div class="bullet"><p id="interests">interests</p></div>            
+              <p> web development, machine learning, data science </p>
+            </div>
         </article> 
 
         <article id="content-resume" class="content page-setToRight">
-          <p>The resume page.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>	
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>
-          <p>More stuff here.</p>	
+            <div class="bullet-wrapper">
+              <div class="bullet"><p id="resume">resum&eacute;</p></div>            
+              <p>View below or
+                 <a href="/file/AWL_resume_052413.pdf" target="_blank">download</a>.
+              </p>
+            </div>
+            <div>
+              <h2>Employment</h2>
+              <div class="line"> </div>
+              <p>
+                <strong>Software Developer</strong>
+                <span class="right">August 2013 &mdash; Present</span> <br>
+                <i>BrightTag, Inc.</i>
+              </p>
+              <ul>
+                <li>Developing back-end code involving Cassandra database</li>
+              </ul>
+              <p>
+                <strong>Postdoctoral Appointee</strong>
+                <span class="right">March 2012 &mdash; July 2013</span> <br>
+                <i>Argonne National Laboratory Leadership Computing Facility</i>
+              </p>
+              <ul class="resume-list">
+                <li>Developed novel algorithms for massively parallel chemistry simulations on IBM Blue Gene/Q supercomputer </li>
+                <li>Increased simulation code speed more than 8x, scalability to ~0.4 million cores </li>
+                <li>Created quantum proton transport model, implemented Newtonian dynamics interface code </li>
+                <li>Assisted University of Chicago research group and workshop attendees with running/improving code </li>
+              </ul>
+              <p>
+                <strong>Ph.D. Student Researcher</strong>
+                <span class="right">June 2007 &mdash; March 2012</span> <br>
+                <i>The Ohio State University</i>
+              </p>
+              <ul>
+                <li>Published 10 first author journal articles, 250+ total citations, h-index 6
+                           (see my
+                           <a href="http://scholar.google.com/citations?user=gQTKB5YAAAAJ&hl=en" target="_blank">
+                           Google Scholar Citations</a>)
+                           <br>
+                           <i><a href="#publications">Jump to publication list!</a></i>
+                </li>
+                <li>Presented quantum chemistry research orally over 20 times at professional events/conferences </li>
+                <li>Invented new mathematical model for solvent electrostatics, new algorithm for building molecule surfaces </li>
+                <li>Implemented force fields, solvent models, parallel linear algebra solvers in
+                    <a href="http://www.q-chem.com/qchem-website/about-qchem4.html" target="_blank">Q-Chem</a> </li>
+                <li>Led recitations and conducted exams as teaching assistant for physical chemistry courses </li>
+              </ul>
+            </div>	
+            <div>
+              <h2>Education</h2>
+              <div class="line"> </div>
+              <p>
+                <strong>Ph.D. Computational/Physical Chemistry</strong>
+                <span class="right">June 2007 &mdash; March 2012</span> <br>
+                <i>The Ohio State University</i><br>
+                GPA: 3.65
+              </p>
+              <p>
+                <strong>B.S. Chemistry with minor in Microbiology</strong>
+                <span class="right">June 2007 &mdash; March 2012</span> <br>
+                <i>The Ohio State University</i><br>
+                GPA: 3.39
+              </p>
+              <p>
+                <strong>Coursework:</strong><br>
+                <ul>
+                    <li><strong>Graduate/Undergraduate</strong></li>
+                    <ul>
+                        <li>Quantum mechanics, Statistical thermodynamics, Computational chemistry,
+                            Multivariable calculus, Linear algebra, Differential equations,
+                            Computer programming, Numerical methods, Parallel computing</li>
+                    </ul>
+                    <li><strong>Udacity</strong></li>
+                    <ul>
+                        <li>Web development, GPU programming, Programming languages</li>
+                    </ul>
+                    <li><strong>Coursera</strong></li>
+                    <ul>
+                        <li>Machine learning, Data science, Algorithms, Databases</li>
+                    </ul>
+                    <li><strong>Codecademy</strong></li>
+                    <ul>
+                        <li>HTML, CSS, Javascript, jQuery</li>
+                    </ul>
+                </ul>
+              </p>  
+            </div>
+            <div>
+              <h2>Technical Skills</h2>
+              <div class="line"> </div>
+              <p>
+                <strong>Proficient:</strong> C++, C, Python, Unix/Linux shell <br>
+                <strong>Familiar:</strong> Java, HTML, CSS/SASS, Javascript, jQuery, SQL
+              </p>
+              <p>
+                <strong>Other Tools:</strong> MPI, OpenMP, awk, LaTex, CVS, SVN, git <br>
+                <strong>Dabblings:</strong> Perl, Fortran, CUDA, Pthreads
+              </p>          	
+            </div>
+            <div>
+              <h2>Additional Experience/Projects</h2>
+              <div class="line"> </div>
+              <p> To see some code I have written, <a href="https://github.com/awlange" target="_blank">check out my GitHub account</a>. </p>
+              <p>
+                <strong>Q-Chem v4.0</strong> <span class="right">2009 &mdash; 2013</span><br>
+                 Lead author of polarizable continuum model and QM/MM codes in commercial software package,
+                 <a href="http://www.q-chem.com/qchem-website/about-qchem4.html" target="_blank">Q-Chem</a>;
+                 one of six software design committee members (C++, C, Fortran)
+              </p>
+              <p>
+                <strong>LAMMPS Ensembles</strong> <span class="right">2013</span><br>
+                Multi-copy communication interface to open-source software,
+                <a href="http://lammps.sandia.gov/" target="_blank">LAMMPS</a>;
+                contributions to main LAMMPS source code (C++, C, MPI, OpenMP, Python)
+              </p>
+              <p>
+                <strong>DESMO</strong> <span class="right">2011</span><br>
+                Highly parallel solvent model code; genetic algorithm dynamic load balancing (C++, OpenMP, MPI)
+              </p>
+            </div>
         </article> 
         
         <article id="content-science" class="content page-setToRight">
-          <p>The science page.</p>	
+            <div class="bullet-wrapper">
+              <div class="bullet"><p id="science">science</p></div>            
+              <p>The science page.</p>
+            </div>	
         </article>
         
         <article id="content-development" class="content page-setToRight">
-          <p>The development page.</p>	
+        	<div class="bullet-wrapper">
+              <div class="bullet"><p id="development">dev</p></div>            
+              <p>The development page.</p>
+            </div>
         </article>
         
         <article id="content-contact" class="content page-setToRight">
-          <p>The contact page.</p>	
+        	<div class="bullet-wrapper">
+              <div class="bullet"><p id="contact">contact</p></div>            
+              <p>email: <a href="mailto:adrianwlange@gmail.com" target="_blank">adrianwlange@gmail.com</a></p>
+            </div>	
         </article>
       </div>     
 
@@ -87,7 +225,7 @@
     </div>    
      
    <footer>
-     <p>Copyright © Adrian W. Lange</p>	 
+     <p>Copyright &copy; Adrian W. Lange</p>	 
    </footer> 
 
     

@@ -18,7 +18,7 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 html {
   width: 100%;
   height: 100%;
-  min-width: 800px; }
+  min-width: 750px; }
 
 body {
   width: 100%;
@@ -30,7 +30,7 @@ body {
   min-height: 100%; }
 
 #page {
-  width: 800px;
+  width: 750px;
   margin: 0 auto;
   overflow: auto;
   padding-bottom: 70px;
@@ -45,6 +45,14 @@ body {
   color: #ecf0f1;
   z-index: -1; }
 
+h2 {
+  margin-top: 40px;
+  font-size: 1.75em;
+  color: #2980b9; }
+
+.right {
+  float: right; }
+
 /* ----------------------------------------------------------------------
  * Content control
  */
@@ -56,24 +64,24 @@ body {
 
 .content {
   position: absolute;
-  min-width: 740px;
+  min-width: 690px;
   padding: 30px 30px;
   background-color: #ecf0f1; }
 
 .content-home-height {
-  height: 200px; }
+  height: 520px; }
 
 .content-resume-height {
-  height: 600px; }
+  height: 2000px; }
 
 .content-science-height {
-  height: 100px; }
+  height: 200px; }
 
 .content-development-height {
-  height: 150px; }
+  height: 200px; }
 
 .content-contact-height {
-  height: 50px; }
+  height: 160px; }
 
 /* ----------------------------------------------------------------------
  * Parallax animation banner
@@ -114,11 +122,7 @@ body {
   z-index: -1;
   height: 100px;
   background: url("../images/bigeq.png") 5% 10%, url("../images/background_binary.png") 90% 110%;
-  background-color: #222222;
-  animation: parallax 40s linear infinite;
-  -o-animation: parallax 40s linear infinite;
-  -moz-animation: parallax 40s linear infinite;
-  -webkit-animation: parallax 40s linear infinite; }
+  background-color: #222222; }
 
 #parallax-overlay {
   height: 100px;
@@ -200,9 +204,6 @@ footer {
     font-size: 0.6em; }
 
 /* ----------------------------------------------------------------------
- * Miscellaneous
- */
-/* ----------------------------------------------------------------------
  * Page and nav transition animations
  */
 .page-visible {
@@ -212,9 +213,9 @@ footer {
   visibility: hidden; }
 
 .page-setToLeft {
-  -webkit-transform: translateX(-101%);
-  -moz-transform: translateX(-101%);
-  transform: translateX(-101%); }
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  transform: translateX(-100%); }
 
 .page-setToNormal {
   -webkit-transform: translateX(0);
@@ -222,21 +223,21 @@ footer {
   transform: translateX(0); }
 
 .page-setToRight {
-  -webkit-transform: translateX(101%);
-  -moz-transform: translateX(101%);
-  transform: translateX(101%); }
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  transform: translateX(100%); }
 
 @-webkit-keyframes moveToLeft {
   to {
-    -webkit-transform: translateX(-101%); } }
+    -webkit-transform: translateX(-100%); } }
 
 @-moz-keyframes moveToLeft {
   to {
-    -moz-transform: translateX(-101%); } }
+    -moz-transform: translateX(-100%); } }
 
 @keyframes moveToLeft {
   to {
-    transform: translateX(-101%); } }
+    transform: translateX(-100%); } }
 
 .page-moveToLeft {
   -webkit-animation: moveToLeft 0.8s ease both;
@@ -262,15 +263,15 @@ footer {
 
 @-webkit-keyframes moveToRight {
   to {
-    -webkit-transform: translateX(101%); } }
+    -webkit-transform: translateX(100%); } }
 
 @-moz-keyframes moveToRight {
   to {
-    -moz-transform: translateX(101%); } }
+    -moz-transform: translateX(100%); } }
 
 @keyframes moveToRight {
   to {
-    transform: translateX(101%); } }
+    transform: translateX(100%); } }
 
 .page-moveToRight {
   -webkit-animation: moveToRight 0.8s ease both;
@@ -279,21 +280,21 @@ footer {
 
 @-webkit-keyframes moveFromLeft {
   from {
-    -webkit-transform: translateX(-101%); }
+    -webkit-transform: translateX(-100%); }
 
   to {
     -webkit-transform: translateX(0); } }
 
 @-moz-keyframes moveFromLeft {
   from {
-    -moz-transform: translateX(-101%); }
+    -moz-transform: translateX(-100%); }
 
   to {
     -moz-transform: translateX(0); } }
 
 @keyframes moveFromLeft {
   from {
-    transform: translateX(-101%); }
+    transform: translateX(-100%); }
 
   to {
     transform: translateX(0); } }
@@ -305,21 +306,21 @@ footer {
 
 @-webkit-keyframes moveFromRight {
   from {
-    -webkit-transform: translateX(101%); }
+    -webkit-transform: translateX(100%); }
 
   to {
     -webkit-transform: translateX(0); } }
 
 @-moz-keyframes moveFromRight {
   from {
-    -moz-transform: translateX(101%); }
+    -moz-transform: translateX(100%); }
 
   to {
     -moz-transform: translateX(0); } }
 
 @keyframes moveFromRight {
   from {
-    transform: translateX(101%); }
+    transform: translateX(100%); }
 
   to {
     transform: translateX(0); } }
@@ -346,3 +347,70 @@ nav a {
   -moz-transition: all 0.8s ease;
   -o-transition: all 0.8s ease;
   transition: all 0.8s ease; }
+
+/* ----------------------------------------------------------------------
+ * Individual page content stuff
+ */
+.bullet-wrapper {
+  height: 96px;
+  width: 690px; }
+  .bullet-wrapper p {
+    padding-top: 38px;
+    padding-left: 110px; }
+
+.bullet {
+  height: 96px;
+  width: 96px;
+  border-radius: 48px;
+  background-color: #2980b9;
+  float: left;
+  display: block; }
+  .bullet p {
+    margin: 0;
+    background-color: transparent;
+    color: #ecf0f1;
+    font-size: 1.25em; }
+
+#now {
+  padding: 32px 30px; }
+
+#before {
+  padding: 32px 20px; }
+
+#school {
+  padding: 32px 20px; }
+
+#interests {
+  padding: 32px 10px; }
+
+#resume {
+  padding: 32px 15px; }
+
+#science {
+  padding: 32px 16px; }
+
+#development {
+  padding: 32px 30px; }
+
+#contact {
+  padding: 32px 14px; }
+
+#content-resume div div p {
+  margin: 0; }
+#content-resume div p {
+  margin: 30px 0px; }
+#content-resume div ul {
+  margin: 10px 0px 10px 48px; }
+  #content-resume div ul li {
+    font-size: 0.8em; }
+  #content-resume div ul ul li {
+    list-style-type: none; }
+
+/* ----------------------------------------------------------------------
+ * Miscellaneous
+ */
+.line {
+  margin: 3px 0px;
+  height: 1px;
+  width: 690px;
+  background-color: #2980b9; }
