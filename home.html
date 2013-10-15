@@ -31,18 +31,27 @@
       <div id="page-background" class="content-home-height"> </div>
     </div>
   	
-    <div id="page-wrapper">
-    	   	
+    <div id="page-wrapper">   	
      <div id="page">
+     	
+      <!-- ====================================================================== -->	
      		
   	  <header> 
         <div class="banner">
           <h1>Adrian W. Lange <strong> scientist + developer</strong></h1>
         </div>
-        <nav id="nav-menu">
+        <nav>
           <ul>
       	    <li><a id="nav-home" class="nav-current" href="#">home</a></li>
-     	    <li><a id="nav-resume" href="#">resum&eacute;</a></li>
+     	    <li><a id="nav-resume" href="#">resum&eacute;</a>
+     	      <ul>
+     	      	<li><a href="#resume-employment">employment</a></li>
+     	      	<li><a href="#resume-education">education</a></li>
+     	      	<li><a href="#resume-skills">skills</a></li>
+     	      	<li><a href="#resume-awards">awards</a></li>
+     	    	<li><a href="#resume-publications">publications</a></li>	
+     	      </ul>
+     	    </li>
         	<li><a id="nav-science" href="#">science</a></li>
         	<li><a id="nav-development" href="#">development</a></li>
         	<li><a id="nav-contact" href="#">contact</a></li>   		
@@ -50,6 +59,7 @@
         </nav>
       </header>
       
+      <!-- ====================================================================== -->
         
       <div id="content-wrapper" class="content-home-height">  
         <article id="content-home" class="content page-setToNormal page-current">
@@ -65,16 +75,18 @@
               <p> postdoc at Argonne National Laboratory </p>
             </div>
             <br/>
-             <div class="bullet-wrapper">
+            <div class="bullet-wrapper">
               <div class="bullet"><p id="school">school</p></div>            
               <p> Ph.D. computational/physical chemistry at the Ohio State University </p>
             </div>
             <br/>
-             <div class="bullet-wrapper">
+            <div class="bullet-wrapper">
               <div class="bullet"><p id="interests">interests</p></div>            
               <p> web development, machine learning, data science </p>
             </div>
         </article> 
+
+        <!-- ====================================================================== -->
 
         <article id="content-resume" class="content page-setToRight">
             <div class="bullet-wrapper">
@@ -83,13 +95,16 @@
                  <a href="/file/AWL_resume_052413.pdf" target="_blank">download</a>.
               </p>
             </div>
+            
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            
             <div>
               <h2>Employment</h2>
               <div class="line"> </div>
               <p>
                 <strong>Software Developer</strong>
                 <span class="right">August 2013 &mdash; Present</span> <br>
-                <i>BrightTag, Inc.</i>
+                <span class="italic">BrightTag, Inc.</span>
               </p>
               <ul>
                 <li>Developing back-end code involving Cassandra database</li>
@@ -97,7 +112,7 @@
               <p>
                 <strong>Postdoctoral Appointee</strong>
                 <span class="right">March 2012 &mdash; July 2013</span> <br>
-                <i>Argonne National Laboratory Leadership Computing Facility</i>
+                <span class="italic">Argonne National Laboratory Leadership Computing Facility</span>
               </p>
               <ul class="resume-list">
                 <li>Developed novel algorithms for massively parallel chemistry simulations on IBM Blue Gene/Q supercomputer </li>
@@ -108,7 +123,7 @@
               <p>
                 <strong>Ph.D. Student Researcher</strong>
                 <span class="right">June 2007 &mdash; March 2012</span> <br>
-                <i>The Ohio State University</i>
+                <span class="italic">The Ohio State University</span>
               </p>
               <ul>
                 <li>Published 10 first author journal articles, 250+ total citations, h-index 6
@@ -116,7 +131,7 @@
                            <a href="http://scholar.google.com/citations?user=gQTKB5YAAAAJ&hl=en" target="_blank">
                            Google Scholar Citations</a>)
                            <br>
-                           <i><a href="#publications">Jump to publication list!</a></i>
+                           <em><a href="#resume-publications">Jump to publication list!</a></em>
                 </li>
                 <li>Presented quantum chemistry research orally over 20 times at professional events/conferences </li>
                 <li>Invented new mathematical model for solvent electrostatics, new algorithm for building molecule surfaces </li>
@@ -125,19 +140,22 @@
                 <li>Led recitations and conducted exams as teaching assistant for physical chemistry courses </li>
               </ul>
             </div>	
+            
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            
             <div>
               <h2>Education</h2>
               <div class="line"> </div>
               <p>
                 <strong>Ph.D. Computational/Physical Chemistry</strong>
                 <span class="right">June 2007 &mdash; March 2012</span> <br>
-                <i>The Ohio State University</i><br>
+                <span class="italic">The Ohio State University</span><br>
                 GPA: 3.65
               </p>
               <p>
                 <strong>B.S. Chemistry with minor in Microbiology</strong>
                 <span class="right">June 2007 &mdash; March 2012</span> <br>
-                <i>The Ohio State University</i><br>
+                <span class="italic">The Ohio State University</span><br>
                 GPA: 3.39
               </p>
               <p>
@@ -164,6 +182,9 @@
                 </ul>
               </p>  
             </div>
+            
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            
             <div>
               <h2>Technical Skills</h2>
               <div class="line"> </div>
@@ -179,7 +200,7 @@
             <div>
               <h2>Additional Experience/Projects</h2>
               <div class="line"> </div>
-              <p> To see some code I have written, <a href="https://github.com/awlange" target="_blank">check out my GitHub account</a>. </p>
+              <p> To see some code I have written, <a href="https://github.com/awlange" target="_blank">see my GitHub account</a>. </p>
               <p>
                 <strong>Q-Chem v4.0</strong> <span class="right">2009 &mdash; 2013</span><br>
                  Lead author of polarizable continuum model and QM/MM codes in commercial software package,
@@ -197,7 +218,89 @@
                 Highly parallel solvent model code; genetic algorithm dynamic load balancing (C++, OpenMP, MPI)
               </p>
             </div>
+            <div>
+              <h2>Honors and Awards</h2>
+              <div class="line"> </div>
+              <p>
+                Chair's Prime Choice presentation in Computational Division at American Chemical Society Conference<span class="right">2013</span><br>
+                Presidential Fellowship from The Ohio State University Graduate School ($33,150)<span class="right">2011 &mdash; 2012</span><br>
+                Chemical Computing Group Research Excellence Award from American Chemical Society ($1,150)<span class="right">2012</span><br>
+                Travel Fellowship to present at American Conference on Theoretical Chemistry ($600)<span class="right">2011</span><br>
+                U.S. Department of Energy Merit Scholarship for top poster presentation ($400)<span class="right">2010</span><br>
+                American Society for Microbiology Undergraduate Research Fellowship ($4,000)<span class="right">2006</span><br>
+                Ohio State Arts &amp; Sciences Undergraduate Honors Research Scholarship ($3,500)<span class="right">2006</span><br>
+              </p>
+            </div>
+            
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            
+            <div id="resume-publications">
+              <h2>Publications</h2>
+              <div class="line"> </div>
+              <ul>
+                <li> A. W. Lange and Gregory A. Voth.
+                     <span class="underline">A Multi-state Approach to Chemical Reactivity in Fragment Based Quantum Chemistry Calculations</span>
+                     <span class="italic">J. Chem. Theory Comput.</span> (2013, In press).
+                </li>
+                <br>
+                <li> A. W. Lange and J. M. Herbert.
+                     <span class="underline">Improving generalized Born models by exploiting connections to polarizable continuum models. II. Corrections for salt effects.</span>
+                     <span class="italic">J. Chem. Theory Comput.</span> 8, 4381-4392 (2012).
+                </li>
+                <br>
+                <li> A. W. Lange and J. M. Herbert.
+                     <span class="underline">Improving generalized Born models by exploiting connections to polarizable continuum models. I. An improved effective Coulomb operator.</span>
+                     <span class="italic">J. Chem. Theory Comput.</span> 8, 1999-2011 (2012).
+                </li>
+                <br>
+                <li> A. W. Lange and J. M. Herbert.
+                     <span class="underline">A Simple Polarizable Continuum Solvation Model for Electrolyte Solutions.</span>
+                     <span class="italic">J. Chem. Phys.</span> 134, 204110 (2011).
+                </li>
+                <br>
+                <li> A. W. Lange and J. M. Herbert.
+                     <span class="underline">Symmetric Versus Asymmetric Discretization of the Integral Equations in Polarizable Continuum Solvation Models.</span>
+                     <span class="italic">Chem. Phys. Lett.</span> 509, 77 (2011).
+                </li> 
+                <br>
+                <li> A. W. Lange and J. M. Herbert.
+                     <span class="underline">Response to “Comment on ‘A Smooth, Nonsingular, and Faithful Discretization Scheme for Polarizable Continuum
+                        Models: The Switching/Gaussian Approach."’.</span> 
+                     <span class="italic">J. Chem. Phys.</span> 134, 117102 (2011).
+                </li>
+                <br>
+                <li> A. W. Lange and J. M. Herbert.
+                     <span class="underline">A Smooth, Nonsingular, and Faithful Discretization Scheme for Polarizable Continuum Models: The Switching/Gaussian Approach.</span>
+                     <span class="italic">J. Chem. Phys.</span> 133, 244111 (2010).
+                </li>
+                <br>
+                <li> A. W. Lange and J. M. Herbert.
+                     <span class="underline">Polarizable Continuum Reaction-ﬁeld Solvation Models Affording Smooth Potential Energy Surfaces.</span>
+                     <span class="italic">J. Phys. Chem. Lett.</span> 1, 556-561 (2010).
+                </li>
+                <br>
+                <li> A. W. Lange and J. M. Herbert.
+                     <span class="underline">Both Intra- and Interstrand Charge-Transfer Excited States in Aqueous B-DNA Are Present at Energies Comparable to or Just Above the
+                     <span class="superscript">1</span>&pi;&pi;<span class="superscript">*</span> 
+                     Excitonic Bright States.</span> 
+                     <span class="italic">J. Am. Chem. Soc.</span> 131, 3913-3922 (2009).
+                </li>
+                <br>
+                <li> A. W. Lange, M. A. Rohrdanz, and J. M. Herbert.
+                     <span class="underline">Charge-Transfer Excited States in a <span>&pi;</span>-Stacked Adenine Dimer, As Predicted Using Long-Range-Corrected Time-Dependent
+                        Density Functional Theory.</span>  
+                     <span class="italic">J. Phys. Chem. B</span> 112, 6304 (2008).
+                </li>
+                <br>
+                <li> A. Lange and J. M. Herbert.
+                     <span class="underline">Simple Methods to Reduce Charge-Transfer Contamination in Time-Dependent Density-Functional Calculations of Clusters and Liquids.</span>
+                     <span class="italic">J. Chem. Theory Comput.</span> 3, 1680 (2007).
+                </li>
+              </ul>           	
+            </div>
         </article> 
+        
+        <!-- ====================================================================== -->
         
         <article id="content-science" class="content page-setToRight">
             <div class="bullet-wrapper">
@@ -206,12 +309,16 @@
             </div>	
         </article>
         
+        <!-- ====================================================================== -->
+        
         <article id="content-development" class="content page-setToRight">
         	<div class="bullet-wrapper">
               <div class="bullet"><p id="development">dev</p></div>            
               <p>The development page.</p>
             </div>
         </article>
+        
+        <!-- ====================================================================== -->
         
         <article id="content-contact" class="content page-setToRight">
         	<div class="bullet-wrapper">

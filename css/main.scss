@@ -20,7 +20,7 @@ fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
 $palette-peter-river: #3498db;
 $palette-belize-hole: #2980b9;
 $palette-clouds: #ecf0f1;
-$palette-dark-gray: #222222;
+$palette-dark-gray: #1a1a1a;
 $transparent-blue: rgba(41, 128, 185, 0.6);
 // ----------------------------------------------------------------------
 //  Sizes
@@ -104,7 +104,7 @@ h2 {
   background-color: $palette-clouds;
 }
 .content-home-height { height: 520px; }
-.content-resume-height { height: 2000px; }
+.content-resume-height { height: 3000px; }
 .content-science-height { height: 200px; }
 .content-development-height { height: 200px; }
 .content-contact-height { height: 160px; }
@@ -179,35 +179,56 @@ h2 {
   font-size: 1.5em;
   z-index: -1;
 }
-
-#nav-menu {
+nav {
   background-color: $palette-belize-hole;
   color: $palette-clouds;
   font-size: 1.5em;
   height: $menu-total-height;
-  z-index: 0;
-}
-nav {
-  z-index: 0;
+  z-index: 0;  
   ul {
-    list-style: none
-  }
-  li {
-    float: left; 
-    display: block; 
-  }
-  a:link, a:visited {
-    height: $menu-height;
-    display: block;
-    padding: $menu-pad $side-pad;
-    text-decoration: none;
-    background-color: $palette-belize-hole;
-    color: $palette-clouds;
-  }
-  a.nav-current {
-    background-color: $palette-peter-river;  
+    list-style: none;  
+    li {
+      float: left;     
+      
+      // highlight the current page
+      a:link, a:visited {
+        height: $menu-height;
+        display: block;
+        padding: $menu-pad $side-pad;
+        text-decoration: none;
+        background-color: transparent;
+        color: $palette-clouds;
+      }
+      a.nav-current {
+        background-color: $palette-peter-river;  
+      }
+    
+      // for dropdown, place items off screen
+      ul {
+        position: absolute;
+        left: -999em;
+        width: 8em;
+        li {
+          width: 8em;
+        }
+      }
+    }
+    
+    // when hovering, make dropdown items appear on screen
+    li:hover {
+      //background-color: $palette-peter-river; // hover change color???
+      ul {
+        background-color: $palette-belize-hole;
+        left: auto;
+        z-index: 50;
+        li:hover {
+          //background-color: $palette-peter-river;
+        }
+      }
+    }
   }
 }
+
 
 /* ----------------------------------------------------------------------
  * Footer (sticky!)
@@ -217,12 +238,13 @@ footer {
   margin-top: -$footer-height;
   width: 100%;
   clear: both;
-  background-color: $palette-dark-gray;
+  //background-color: $palette-dark-gray;
+  background-color: $palette-belize-hole;
   p {
     height: $footer-height - $footer-pad;
     padding: $footer-pad 0 0 $side-pad;
-    //background-color: transparent;
-    background-color: $transparent-blue;
+    background-color: transparent;
+    //background-color: $transparent-blue;
     color: $palette-clouds;
     font-size: 0.6em;
   }
@@ -394,4 +416,15 @@ $bullet-vertical-pad: 32px;
   height: 1px;
   width: $content-width;
   background-color: $palette-belize-hole;
+}
+.underline {
+  text-decoration: underline;
+}
+.superscript {
+  position: relative;
+  bottom: 0.4em;
+  font-size: 0.8em;
+}
+.italic {
+  font-style: italic;
 }

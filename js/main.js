@@ -21,7 +21,7 @@ var pageToPageHeight = {
 };
 var pageHeights = {
   "content-home-height": "520px",
-  "content-resume-height": "600px",
+  "content-resume-height": "3000px",
   "content-science-height": "100px",
   "content-development-height": "150px",
   "content-contact-height": "50px"

@@ -72,7 +72,7 @@ h2 {
   height: 520px; }
 
 .content-resume-height {
-  height: 2000px; }
+  height: 3000px; }
 
 .content-science-height {
   height: 200px; }
@@ -122,7 +122,7 @@ h2 {
   z-index: -1;
   height: 100px;
   background: url("../images/bigeq.png") 5% 10%, url("../images/background_binary.png") 90% 110%;
-  background-color: #222222; }
+  background-color: #1a1a1a; }
 
 #parallax-overlay {
   height: 100px;
@@ -163,29 +163,35 @@ h2 {
   font-size: 1.5em;
   z-index: -1; }
 
-#nav-menu {
+nav {
   background-color: #2980b9;
   color: #ecf0f1;
   font-size: 1.5em;
   height: 54px;
   z-index: 0; }
-
-nav {
-  z-index: 0; }
   nav ul {
     list-style: none; }
-  nav li {
-    float: left;
-    display: block; }
-  nav a:link, nav a:visited {
-    height: 30px;
-    display: block;
-    padding: 12px 30px;
-    text-decoration: none;
-    background-color: #2980b9;
-    color: #ecf0f1; }
-  nav a.nav-current {
-    background-color: #3498db; }
+    nav ul li {
+      float: left; }
+      nav ul li a:link, nav ul li a:visited {
+        height: 30px;
+        display: block;
+        padding: 12px 30px;
+        text-decoration: none;
+        background-color: transparent;
+        color: #ecf0f1; }
+      nav ul li a.nav-current {
+        background-color: #3498db; }
+      nav ul li ul {
+        position: absolute;
+        left: -999em;
+        width: 8em; }
+        nav ul li ul li {
+          width: 8em; }
+    nav ul li:hover ul {
+      background-color: #2980b9;
+      left: auto;
+      z-index: 50; }
 
 /* ----------------------------------------------------------------------
  * Footer (sticky!)
@@ -195,11 +201,11 @@ footer {
   margin-top: -70px;
   width: 100%;
   clear: both;
-  background-color: #222222; }
+  background-color: #2980b9; }
   footer p {
     height: 40px;
     padding: 30px 0 0 30px;
-    background-color: rgba(41, 128, 185, 0.6);
+    background-color: transparent;
     color: #ecf0f1;
     font-size: 0.6em; }
 
@@ -414,3 +420,14 @@ nav a {
   height: 1px;
   width: 690px;
   background-color: #2980b9; }
+
+.underline {
+  text-decoration: underline; }
+
+.superscript {
+  position: relative;
+  bottom: 0.4em;
+  font-size: 0.8em; }
+
+.italic {
+  font-style: italic; }
