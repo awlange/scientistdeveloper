@@ -42,7 +42,33 @@ $content-height: 600px;
 // ----------------------------------------------------------------------
 //  Misc. variables
 //
-$transition-time: 0.8s;
+$transition-time-slow: 0.8s;
+$transition-time-medium: 0.4s;
+$transition-time-fast: 0.2s;
+
+// ----------------------------------
+// Transitions
+@mixin css-transition-slow {
+  $transition-value: all $transition-time-slow ease;
+  -webkit-transition: $transition-value;
+  -moz-transition: $transition-value;
+  -o-transition: $transition-value;
+  transition: $transition-value;  
+}
+@mixin css-transition-medium {
+  $transition-value: all $transition-time-medium ease;
+  -webkit-transition: $transition-value;
+  -moz-transition: $transition-value;
+  -o-transition: $transition-value;
+  transition: $transition-value;  
+}
+@mixin css-transition-fast {
+  $transition-value: all $transition-time-fast ease;
+  -webkit-transition: $transition-value;
+  -moz-transition: $transition-value;
+  -o-transition: $transition-value;
+  transition: $transition-value;  
+}
 
 /* ----------------------------------------------------------------------
  * General styling
@@ -68,7 +94,7 @@ body {
   margin: 0 auto; // center the page!
   overflow: auto;
   padding-bottom: $footer-height;
-  z-index: 3;
+  z-index: 1;
 }
 #page-background {
   position: absolute;
@@ -96,6 +122,7 @@ h2 {
   position: relative;
   width: 100%;
   clear: both; 
+  z-index: 3;
 }
 .content {
   position: absolute;
@@ -179,56 +206,58 @@ h2 {
   font-size: 1.5em;
   z-index: -1;
 }
-nav {
+nav { 
   background-color: $palette-belize-hole;
   color: $palette-clouds;
   font-size: 1.5em;
   height: $menu-total-height;
   z-index: 0;  
-  ul {
-    list-style: none;  
-    li {
-      float: left;     
-      
-      // highlight the current page
-      a:link, a:visited {
-        height: $menu-height;
-        display: block;
-        padding: $menu-pad $side-pad;
-        text-decoration: none;
-        background-color: transparent;
-        color: $palette-clouds;
-      }
-      a.nav-current {
-        background-color: $palette-peter-river;  
-      }
-    
-      // for dropdown, place items off screen
-      ul {
-        position: absolute;
-        left: -999em;
-        width: 8em;
-        li {
-          width: 8em;
-        }
-      }
-    }
-    
-    // when hovering, make dropdown items appear on screen
-    li:hover {
-      //background-color: $palette-peter-river; // hover change color???
-      ul {
-        background-color: $palette-belize-hole;
-        left: auto;
-        z-index: 50;
-        li:hover {
-          //background-color: $palette-peter-river;
-        }
-      }
+  // highlight the current page?
+  a:link, a:visited {
+    float: left; 
+    height: $menu-height;
+    display: block;
+    padding: $menu-pad $side-pad;
+    text-decoration: none;
+    background-color: $palette-belize-hole;
+    color: $palette-clouds;
+  }
+  a.nav-current {}
+  // for dropdown
+  div {
+    float: left;
+    nav {
+      position: absolute;
+      top: $header-height + $menu-total-height;
+      z-index: 50;
+      width: 8em;
+      overflow: hidden;
+      font-size: 100%;
+      max-height: 0;
     }
   }
+   
+  //@include css-transition-slow
+   
+  // when hovering, make dropdown items appear on screen
+  a:hover {
+    background-color: $palette-clouds;
+    color: $palette-belize-hole; 
+  } 
+  div:hover {
+    float: left;
+    nav {
+      position: absolute;
+      top: $header-height + $menu-total-height;
+      z-index: 50;
+      width: 8em;
+      overflow: hidden;
+      font-size: 100%;
+      max-height: 999px;
+      height: 5*$menu-total-height;
+    }
+  }   
 }
-
 
 /* ----------------------------------------------------------------------
  * Footer (sticky!)
@@ -254,8 +283,6 @@ footer {
  * Page and nav transition animations
  */
 .page-current {}
-.page-visible { visibility: visible; }
-.page-hidden { visibility: hidden; }
 
 $offscreen-position: 100%;
 $offscreen-left: translateX(-$offscreen-position);
@@ -279,7 +306,7 @@ $offscreen-right: translateX($offscreen-position);
 }
 // ----------------------------------
 @mixin offscreen-animation($motion) {
-  $animation-params: $motion $transition-time ease both;
+  $animation-params: $motion $transition-time-slow ease both;
   -webkit-animation: $animation-params;
   -moz-animation: $animation-params;
   animation: $animation-params;  
@@ -337,18 +364,12 @@ $offscreen-right: translateX($offscreen-position);
 .page-moveFromRight {
   @include offscreen-animation(moveFromRight); 
 }
-// ----------------------------------
-// Transitions
-@mixin css-transition {
-  $transition-value: all $transition-time ease;
-  -webkit-transition: $transition-value;
-  -moz-transition: $transition-value;
-  -o-transition: $transition-value;
-  transition: $transition-value;  
-}
-nav a {@include css-transition}
-#content-wrapper {@include css-transition}
-#page-background {@include css-transition}
+
+//nav ul li ul {@include css-transition-slow}
+// nav a {@include css-transition-fast}
+#dropdown-resume {@include css-transition-medium}
+#content-wrapper {@include css-transition-slow}
+#page-background {@include css-transition-slow}
 
 /* ----------------------------------------------------------------------
  * Individual page content stuff
@@ -417,14 +438,12 @@ $bullet-vertical-pad: 32px;
   width: $content-width;
   background-color: $palette-belize-hole;
 }
-.underline {
-  text-decoration: underline;
-}
 .superscript {
   position: relative;
   bottom: 0.4em;
   font-size: 0.8em;
 }
-.italic {
-  font-style: italic;
-}
+.underline { text-decoration: underline; }
+.italic { font-style: italic; }
+.hidden { display: none; }
+.not-hidden {display: normal; }

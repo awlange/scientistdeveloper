@@ -34,7 +34,7 @@ body {
   margin: 0 auto;
   overflow: auto;
   padding-bottom: 70px;
-  z-index: 3; }
+  z-index: 1; }
 
 #page-background {
   position: absolute;
@@ -60,7 +60,8 @@ h2 {
   overflow: hidden;
   position: relative;
   width: 100%;
-  clear: both; }
+  clear: both;
+  z-index: 3; }
 
 .content {
   position: absolute;
@@ -169,29 +170,38 @@ nav {
   font-size: 1.5em;
   height: 54px;
   z-index: 0; }
-  nav ul {
-    list-style: none; }
-    nav ul li {
-      float: left; }
-      nav ul li a:link, nav ul li a:visited {
-        height: 30px;
-        display: block;
-        padding: 12px 30px;
-        text-decoration: none;
-        background-color: transparent;
-        color: #ecf0f1; }
-      nav ul li a.nav-current {
-        background-color: #3498db; }
-      nav ul li ul {
-        position: absolute;
-        left: -999em;
-        width: 8em; }
-        nav ul li ul li {
-          width: 8em; }
-    nav ul li:hover ul {
-      background-color: #2980b9;
-      left: auto;
-      z-index: 50; }
+  nav a:link, nav a:visited {
+    float: left;
+    height: 30px;
+    display: block;
+    padding: 12px 30px;
+    text-decoration: none;
+    background-color: #2980b9;
+    color: #ecf0f1; }
+  nav div {
+    float: left; }
+    nav div nav {
+      position: absolute;
+      top: 154px;
+      z-index: 50;
+      width: 8em;
+      overflow: hidden;
+      font-size: 100%;
+      max-height: 0; }
+  nav a:hover {
+    background-color: #ecf0f1;
+    color: #2980b9; }
+  nav div:hover {
+    float: left; }
+    nav div:hover nav {
+      position: absolute;
+      top: 154px;
+      z-index: 50;
+      width: 8em;
+      overflow: hidden;
+      font-size: 100%;
+      max-height: 999px;
+      height: 270px; }
 
 /* ----------------------------------------------------------------------
  * Footer (sticky!)
@@ -212,12 +222,6 @@ footer {
 /* ----------------------------------------------------------------------
  * Page and nav transition animations
  */
-.page-visible {
-  visibility: visible; }
-
-.page-hidden {
-  visibility: hidden; }
-
 .page-setToLeft {
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);
@@ -336,11 +340,11 @@ footer {
   -moz-animation: moveFromRight 0.8s ease both;
   animation: moveFromRight 0.8s ease both; }
 
-nav a {
-  -webkit-transition: all 0.8s ease;
-  -moz-transition: all 0.8s ease;
-  -o-transition: all 0.8s ease;
-  transition: all 0.8s ease; }
+#dropdown-resume {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
 
 #content-wrapper {
   -webkit-transition: all 0.8s ease;
@@ -421,13 +425,19 @@ nav a {
   width: 690px;
   background-color: #2980b9; }
 
-.underline {
-  text-decoration: underline; }
-
 .superscript {
   position: relative;
   bottom: 0.4em;
   font-size: 0.8em; }
 
+.underline {
+  text-decoration: underline; }
+
 .italic {
   font-style: italic; }
+
+.hidden {
+  display: none; }
+
+.not-hidden {
+  display: normal; }

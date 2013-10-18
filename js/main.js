@@ -5,6 +5,9 @@ var navs = {
   "#nav-development": "#content-development",
   "#nav-contact": "#content-contact"
 };
+var dropdowns = {
+  "#nav-resume": "#dropdown-resume"
+};
 var pages = {
   "#content-home": 0,
   "#content-resume": 1,
@@ -30,6 +33,9 @@ var pageHeights = {
 $( document ).ready( function(){
   for (var nav in navs) {
     navClick(nav, navs[nav]);
+  }
+  for (var nav in dropdowns) {
+    navDropDownEffects(nav, dropdowns[nav]);
   }
 });
 
@@ -95,7 +101,7 @@ var pageHeightTransition = function(pageFrom, pageTo) {
 };
 
 var navClick = function(navClick, pageClick) {	
-  $(navClick).click( function(e){ 	 	
+  $(navClick).click( function(e) { 	 	
     
     // Prevent jumping to anchor (top of page) when clicked. e is for event.
     e.preventDefault();
@@ -128,3 +134,12 @@ var navClick = function(navClick, pageClick) {
   });
 };
 
+var navDropDownEffects = function(nav, dropdown) {
+  // $(nav).hover( 
+  	// function() {
+      // $(dropdown).fadeIn(400);
+    // }, function() {
+      // $(dropdown).hide();
+    // }
+  // );
+};
