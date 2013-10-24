@@ -131,7 +131,7 @@ h2 {
   background-color: $palette-clouds;
 }
 .content-home-height { height: 520px; }
-.content-resume-height { height: 3000px; }
+.content-resume-height { height: 3500px; }
 .content-science-height { height: 200px; }
 .content-development-height { height: 200px; }
 .content-contact-height { height: 160px; }
@@ -142,7 +142,7 @@ h2 {
  */
 @mixin parallax-keyframes {
   from {left: 0}
-  to   {left: -2000px}
+  to   {left: -1500px}
 }
 @keyframes parallax {@include parallax-keyframes;}
 @-o-keyframes parallax {@include parallax-keyframes;}
@@ -163,11 +163,11 @@ h2 {
       /*url('../images/midground.png') 20% 20%,*/
       url('../images/background_binary.png') 90% 110%;
   background-color: $palette-dark-gray;
-  // $animation-value: parallax 40s linear infinite;
-  // animation: $animation-value;
-  // -o-animation: $animation-value;
-  // -moz-animation: $animation-value;
-  // -webkit-animation: $animation-value;
+  $animation-value: parallax 60s linear infinite;
+  animation: $animation-value;
+  -o-animation: $animation-value;
+  -moz-animation: $animation-value;
+  -webkit-animation: $animation-value;
 }
 #parallax-overlay {
   height: $header-height;
@@ -237,8 +237,6 @@ nav {
     }
   }
    
-  //@include css-transition-slow
-   
   // when hovering, make dropdown items appear on screen
   a:hover {
     background-color: $palette-clouds;
@@ -286,7 +284,7 @@ footer {
 
 $offscreen-position: 100%;
 $offscreen-left: translateX(-$offscreen-position);
-$offscreen-normal: translateX(0);
+$offscreen-center: translateX(0);
 $offscreen-right: translateX($offscreen-position);
 
 .page-setToLeft {  
@@ -294,10 +292,10 @@ $offscreen-right: translateX($offscreen-position);
   -moz-transform: $offscreen-left;
   transform: $offscreen-left; 
 }
-.page-setToNormal { 
-  -webkit-transform: $offscreen-normal;
-  -moz-transform: $offscreen-normal;
-  transform: $offscreen-normal; 
+.page-setToCenter { 
+  -webkit-transform: $offscreen-center;
+  -moz-transform: $offscreen-center;
+  transform: $offscreen-center; 
  }
 .page-setToRight { 
   -webkit-transform: $offscreen-right;
@@ -319,11 +317,11 @@ $offscreen-right: translateX($offscreen-position);
   @include offscreen-animation(moveToLeft); 
 }
 // ----------------------------------
-@-webkit-keyframes moveToNormal { to { -webkit-transform: $offscreen-normal; } }
-@-moz-keyframes moveToNormal { to { -moz-transform: $offscreen-normal; } }
-@keyframes moveToNormal { to { transform: $offscreen-normal; } }
-.page-moveToNormal {
-  @include offscreen-animation(moveToNormal);
+@-webkit-keyframes moveToCenter { to { -webkit-transform: $offscreen-center; } }
+@-moz-keyframes moveToCenter { to { -moz-transform: $offscreen-center; } }
+@keyframes moveToCenter { to { transform: $offscreen-center; } }
+.page-moveToCenter {
+  @include offscreen-animation(moveToCenter);
 }
 // ----------------------------------
 @-webkit-keyframes moveToRight { to { -webkit-transform: $offscreen-right; } }
@@ -335,15 +333,15 @@ $offscreen-right: translateX($offscreen-position);
 // ----------------------------------
 @-webkit-keyframes moveFromLeft { 
   from { -webkit-transform: $offscreen-left; }
-  to { -webkit-transform: $offscreen-normal; } 
+  to { -webkit-transform: $offscreen-center; } 
 }
 @-moz-keyframes moveFromLeft { 
   from { -moz-transform: $offscreen-left; } 
-  to { -moz-transform: $offscreen-normal; }
+  to { -moz-transform: $offscreen-center; }
 }
 @keyframes moveFromLeft { 
   from { transform: $offscreen-left; } 
-  to { transform: $offscreen-normal; } 
+  to { transform: $offscreen-center; } 
 }
 .page-moveFromLeft {
   @include offscreen-animation(moveFromLeft); 
@@ -351,15 +349,15 @@ $offscreen-right: translateX($offscreen-position);
 // ----------------------------------
 @-webkit-keyframes moveFromRight { 
   from { -webkit-transform: $offscreen-right; }
-  to { -webkit-transform: $offscreen-normal; } 
+  to { -webkit-transform: $offscreen-center; } 
 }
 @-moz-keyframes moveFromRight { 
   from { -moz-transform: $offscreen-right; } 
-  to { -moz-transform: $offscreen-normal; }
+  to { -moz-transform: $offscreen-center; }
 }
 @keyframes moveFromRight { 
   from { transform: $offscreen-right; }
-  to { transform: $offscreen-normal; } 
+  to { transform: $offscreen-center; } 
 }
 .page-moveFromRight {
   @include offscreen-animation(moveFromRight); 

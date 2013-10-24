@@ -5,9 +5,6 @@ var navs = {
   "#nav-development": "#content-development",
   "#nav-contact": "#content-contact"
 };
-var dropdowns = {
-  "#nav-resume": "#dropdown-resume"
-};
 var pages = {
   "#content-home": 0,
   "#content-resume": 1,
@@ -24,18 +21,22 @@ var pageToPageHeight = {
 };
 var pageHeights = {
   "content-home-height": "520px",
-  "content-resume-height": "3000px",
+  "content-resume-height": "3500px",
   "content-science-height": "100px",
   "content-development-height": "150px",
   "content-contact-height": "50px"
 }; 
+var dropDowns = {
+  // clicked dropdown       // element to scroll to   // nav container of dropdown 
+  "#dropdown-publications": [ "#resume-publications", "#nav-resume" ]
+};
 
-$( document ).ready( function(){
+$(document).ready( function(){
   for (var nav in navs) {
-    navClick(nav, navs[nav]);
+    navClick(nav);
   }
-  for (var nav in dropdowns) {
-    navDropDownEffects(nav, dropdowns[nav]);
+  for (var dropdown in dropDowns) {
+  	scrollTo(dropdown);
   }
 });
 
@@ -65,7 +66,7 @@ var isPageARightOfPageB = function(pageA, pageB) {
 };
 
 var clearSets = function(page) {
-  var setClasses = ["page-setToLeft", "page-setToNormal", "page-setToRight"]; 
+  var setClasses = ["page-setToLeft", "page-setToCenter", "page-setToRight"]; 
   for (var i in setClasses) {
     if ($(page).hasClass(setClasses[i])) {
   	  $(page).removeClass(setClasses[i]);
@@ -76,7 +77,7 @@ var clearSets = function(page) {
 var clearMoves = function(page) {
   var moveClasses = [
     "page-moveToLeft", 
-    "page-moveToNormal", 
+    "page-moveToCenter", 
     "page-moveToRight",
     "page-moveFromLeft",
     "page-moveFromRight"
@@ -100,14 +101,21 @@ var pageHeightTransition = function(pageFrom, pageTo) {
   $("#page-background").addClass(pageToPageHeight[pageTo]);	
 };
 
-var navClick = function(navClick, pageClick) {	
+var navClick = function(navClick) {	
   $(navClick).click( function(e) { 	 	
-    
     // Prevent jumping to anchor (top of page) when clicked. e is for event.
     e.preventDefault();
+  	switchPage(navClick);
+  });
+};
+
+function switchPage(navClick) {	
+  	var pageClick = navs[navClick];
+    var pageCurrent = getCurrentPage(); 	
+  	var pageChanged = false;
   	
-  	var pageCurrent = getCurrentPage(); 	
   	if (pageClick != pageCurrent) {	
+  	  pageChanged = true;
   	  var navCurrent = getCurrentNav();	
   	  
   	  // change height of page wrapper to the clicked page height
@@ -131,15 +139,20 @@ var navClick = function(navClick, pageClick) {
         navTransition(navCurrent, navClick);	
       }            
     }
+    return pageChanged;
+};
+
+var scrollTo = function(dropDownClick) {
+  $(dropDownClick).click( function(e) {
+  	// First make sure we are on the right displayed page
+  	var navClick = dropDowns[dropDownClick][1];
+  	var doDelay = switchPage(navClick);
+  	// Then scroll
+  	var goToElement = dropDowns[dropDownClick][0]; 
+    $('html,body').animate({scrollTop: $(goToElement).offset().top});
   });
 };
 
-var navDropDownEffects = function(nav, dropdown) {
-  // $(nav).hover( 
-  	// function() {
-      // $(dropdown).fadeIn(400);
-    // }, function() {
-      // $(dropdown).hide();
-    // }
-  // );
+var scrollToTop = function() {
+  $('html,body').animate({scrollTop: 0});
 };

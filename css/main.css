@@ -73,7 +73,7 @@ h2 {
   height: 520px; }
 
 .content-resume-height {
-  height: 3000px; }
+  height: 3500px; }
 
 .content-science-height {
   height: 200px; }
@@ -92,28 +92,28 @@ h2 {
     left: 0; }
 
   to {
-    left: -2000px; } }
+    left: -1500px; } }
 
 @-o-keyframes parallax {
   from {
     left: 0; }
 
   to {
-    left: -2000px; } }
+    left: -1500px; } }
 
 @-moz-keyframes parallax {
   from {
     left: 0; }
 
   to {
-    left: -2000px; } }
+    left: -1500px; } }
 
 @-webkit-keyframes parallax {
   from {
     left: 0; }
 
   to {
-    left: -2000px; } }
+    left: -1500px; } }
 
 #parallax-background {
   top: 0;
@@ -123,7 +123,11 @@ h2 {
   z-index: -1;
   height: 100px;
   background: url("../images/bigeq.png") 5% 10%, url("../images/background_binary.png") 90% 110%;
-  background-color: #1a1a1a; }
+  background-color: #1a1a1a;
+  animation: parallax 60s linear infinite;
+  -o-animation: parallax 60s linear infinite;
+  -moz-animation: parallax 60s linear infinite;
+  -webkit-animation: parallax 60s linear infinite; }
 
 #parallax-overlay {
   height: 100px;
@@ -227,7 +231,7 @@ footer {
   -moz-transform: translateX(-100%);
   transform: translateX(-100%); }
 
-.page-setToNormal {
+.page-setToCenter {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   transform: translateX(0); }
@@ -254,22 +258,22 @@ footer {
   -moz-animation: moveToLeft 0.8s ease both;
   animation: moveToLeft 0.8s ease both; }
 
-@-webkit-keyframes moveToNormal {
+@-webkit-keyframes moveToCenter {
   to {
     -webkit-transform: translateX(0); } }
 
-@-moz-keyframes moveToNormal {
+@-moz-keyframes moveToCenter {
   to {
     -moz-transform: translateX(0); } }
 
-@keyframes moveToNormal {
+@keyframes moveToCenter {
   to {
     transform: translateX(0); } }
 
-.page-moveToNormal {
-  -webkit-animation: moveToNormal 0.8s ease both;
-  -moz-animation: moveToNormal 0.8s ease both;
-  animation: moveToNormal 0.8s ease both; }
+.page-moveToCenter {
+  -webkit-animation: moveToCenter 0.8s ease both;
+  -moz-animation: moveToCenter 0.8s ease both;
+  animation: moveToCenter 0.8s ease both; }
 
 @-webkit-keyframes moveToRight {
   to {
